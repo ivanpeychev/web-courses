@@ -1,0 +1,40 @@
+table {
+    width: 500px;
+    height: 150px;
+    font-size: 0.9em;
+    font-family: arial;
+}
+
+thead {
+    background-color: #4EB106;
+    color: white;
+}
+
+tr:last-child td {
+    border-bottom: 1px solid gray;
+}
+
+td {
+    padding: 3px;
+    padding-left: 6px;
+    border-right: 1px solid gray;
+    padding-bottom: 5px;
+}
+
+td:last-child {
+    border-right: none;
+}
+
+tr:nth-child(even) td {
+    background-color: #ECECD8;
+}
+
+img {
+    width: 20px;
+}
+
+div {
+    position: relative; 
+    top: 5px;
+    display: inline;
+}

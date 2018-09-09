@@ -1,0 +1,24 @@
+@font-face {
+    font-family: Nunito;
+    src: url('https://fonts.googleapis.com/css?family=Nunito');
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+p {
+    width: 600px;
+    color: rgb(11, 97, 126);
+    font-family: Arial;
+}
+
+p::first-line {
+    font-family: Consolas;
+}
+
+p::first-letter {
+    font-family: Nunito;
+    font-size: 3em;
+}

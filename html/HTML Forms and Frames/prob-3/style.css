@@ -1,0 +1,38 @@
+#table-1 {
+  border: 2px solid black;
+  width: 800px;
+  height: 430px;
+}
+
+#head {
+  height: 20px;
+  text-align: center;
+  font-size: 20px;
+}
+
+#body {
+  height: 100%;
+}
+
+#head:td
+
+/*
+table, tr, td {
+  border: 1px dashed black;
+}
+*/
+#table-2 {
+  margin: 10px;
+  width: 60%;
+  height: 80%;
+  border: 2px solid black;
+
+}
+
+fieldset {
+  height: 100%;
+}
+
+fieldset>table {
+  width: 105%;
+}

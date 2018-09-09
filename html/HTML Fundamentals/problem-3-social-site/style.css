@@ -1,0 +1,19 @@
+body {
+  background-color: lightblue;
+}
+
+img {
+  border: 2px solid black;
+}
+
+button {
+  border-radius: 10px;
+}
+
+.no-bullet {
+  list-style-type: none;
+}
+
+.text-center {
+  text-align: center;
+}

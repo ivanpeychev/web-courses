@@ -1,0 +1,20 @@
+html {
+  font-family: Verdana;
+}
+
+table, td {
+  border: 1px solid lightblue;
+}
+
+tfoot td {
+  text-align: center;
+  background-color: #82CAFF;
+}
+
+input[name=tel-country-code] {
+  width: 30px;
+}
+
+input[name=tel-op-code], input[name=tel], input[name=state]{
+  width: 100px;
+}

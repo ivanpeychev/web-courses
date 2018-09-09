@@ -1,0 +1,9 @@
+input {
+  display: block;
+  margin-bottom: 10px;
+}
+
+p {
+  padding-top: 10px;
+  display: inline;
+}

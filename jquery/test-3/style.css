@@ -1,0 +1,9 @@
+body {
+  font-family: Verdana;
+}
+
+button {
+  display: block;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}

@@ -1,0 +1,43 @@
+body {
+  font-family: Verdana;
+  margin: 10px;
+}
+
+button {
+  margin: 5px;
+  background-color: lightblue;
+}
+
+.active {
+  background-color: blue;
+  color: white;
+}
+
+.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {
+  outline: 0;
+  color: white;
+}
+
+#errorDiv {
+  width: 400px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  text-align: center;
+}
+
+thead tr td {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+td {
+  margin: 10px;
+  padding: 5px;
+}
+
+.table {
+    border-top: 1px solid lightgray;
+    width: 600px;
+    margin: auto;
+}
