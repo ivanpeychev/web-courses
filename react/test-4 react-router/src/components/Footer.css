@@ -1,0 +1,17 @@
+.main-footer {
+  color: darkgray;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.main-footer hr {
+  border-color: rgb(238, 238, 238);
+  border-style: dashed;
+  margin-left: 10px;
+  margin-right: 10px;
+}
