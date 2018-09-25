@@ -1,0 +1,36 @@
+.navbar {
+	background-color: rgb(255, 145, 0);
+	color: white;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	font-size: 3rem;
+}
+
+.navbar li:hover {
+	background-color: #000000;
+}
+
+#primary li {
+	display: inline-block;
+}
+
+.catalog {
+	display: none;
+}
+
+.games {
+	display: none;
+}
+
+.movies {
+	display: none;
+}
+
+.users {
+	display: none;
+}
+
+.primary>li:hover {
+	background-color: white;
+}

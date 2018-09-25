@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+<link>
+	<title>CSS Selectors and Rules</title>
+	<!--<link rel="stylesheet" href="common.css"></link>
+	<link rel="stylesheet" href="specific.css"></link>
+-->
+	<meta name="viewport" content="width=device-width, initial-scale=0.45, user-scalable=1, maximum-scale=0.6, minimum-scale=0.45">
+	<meta name="theme-color" content="#355664" />
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+</head>
+<body>
+<style>
+	@import url('https://fonts.googleapis.com/css?family=Quicksand');
+	@import url('https://fonts.googleapis.com/css?family=Lobster');
+	@import url('./Forte.ttf');
+
+	html, body {
+		margin: 0;
+		padding: 0.2rem;
+		background-color: #355664;
+		font-family: Arial, sans-serif;
+		font-size: 20px;
+	}
+
+	body {
+		padding-top: 10.2rem;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	a:visited {
+		color: blue;
+	}
+
+	.font-forte {
+		font-family: Forte, Lobster, sans-serif;
+		color: white;
+	}
+
+	.uppercase {
+		text-transform: uppercase;
+	}
+
+	hr {
+		border: 0;
+		height: 0.05rem;
+		background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+	}
+
+	#wrapper {
+		width: 960px;
+		height: 100%;
+		margin: 0 auto;
+	}
+
+	#main-header {
+		height: 11.5rem;
+		position: fixed;
+		width: 960px;
+		background-color: #355664;
+		transition: top 0.2s ease-in-out;
+	}
+
+	#logo {
+		text-align: center;
+		font-size: 3rem;
+	}
+
+	#sub-logo {
+		text-align: right;
+		font-size: 2rem;
+		margin-bottom: 50px;
+	}
+
+	#nav-bar {
+		margin-bottom: 5px;
+	}
+
+	.nav-up {
+		top: -11.5rem;
+	}
+
+	.nav-down {
+		top: 0;
+	}
+
+	#main .article {
+		background-color: #213E4A;
+		border-radius: 10px;
+		margin-top: 25px;
+		width: 100%;
+		margin-bottom: 25px;
+		padding-bottom: 20px;
+	}
+
+	#main .article>header {
+		padding-top: 20px;
+	}
+
+	#main .article .title {
+		text-align: center;
+		color: white;
+		font-size: 1.6rem;
+		text-transform: uppercase;
+		letter-spacing: 5px;
+		margin-bottom: 15px;
+		margin-top: 0;
+	}
+
+	.border {
+		background-color: #416371;
+		margin: 0 auto;
+		width: 98%;
+		height: 1px;
+	}
+
+	#main .article .left {
+		width: 45%;
+		display: inline-block;
+		padding-left: 4%;
+		padding-right: 1%;
+		font-size: 0.8rem;
+		color: white;
+		padding-top: 20px;
+		text-align: justify;
+	}
+
+	#main .article .right {
+		width: 45%;
+		padding-left: 1%;
+		padding-right: 4%;
+		font-size: 0.8rem;
+		color: white;
+		padding-top: 20px;
+		float: right;
+	}
+
+	#main .article .right .image img {
+		padding-top: 12px;
+		width: 100%;
+	}
+
+	#footer-text {
+		color: rgba(0, 0, 0, 0.7); 
+		text-shadow: 0 1px rgba(255, 255, 255, 0.1);
+		font-size: 0.8rem;
+		text-align: center;
+		margin-bottom: 5px;
+	}
+
+	.button {
+		background: #213E4A;
+		width: 6rem;
+		height: 1.66rem;
+		border-radius: 4px;
+		display: inline-block;
+	}
+	.button p {
+		font-family: Quicksand;
+		text-align: center;
+		font-size: 0.8rem;
+		color: #FFF;
+		margin-block-start: 0;
+		margin-block-end: 0;
+		margin-top: 0.4rem;
+		margin-bottom: 0.4rem;
+		user-select: none;
+	}
+	.button:hover {
+		cursor: pointer;
+	}
+
+	@media only screen and (max-width: 1000px) {
+		/* For mobile phones: */
+		html, body {
+			font-size: 40px;
+		}
+
+		#main-header {
+			height: 8.5rem;
+		}
+
+		#main .article {
+			margin-top: -1.6rem;
+			margin-bottom: 2rem;
+		}
+
+		#main .article .title {
+			font-size: 1.4rem;
+		}
+
+		#main .article .left {
+			width: 98%;
+			padding-left: 1%;
+			padding-right: 1%;
+		}
+
+		#main .article .right {
+			float:initial;
+			width: 98%;
+			padding-left: 1%;
+			padding-right: 1%;
+		}
+
+		#logo {
+			margin-bottom: 20px;
+		}
+
+		#sub-logo {
+			font-size: 1.2rem;
+			margin-bottom: 30px;
+		}
+
+		#nav-bar {
+			text-align: center;
+		}
+
+		#nav-bar a {
+			font-size: 1rem;
+		}
+	}
+
+</style>
+
+<div id="wrapper">
+	<header id="main-header" class="nav-down">
+		<div class="font-forte uppercase" id="logo">Your logo</div>
+		<div class="font-forte" id="sub-logo">and a fancy slogan</div>
+		<nav id="nav-bar">
+			<div class="button"><p>First link</p></div>
+			<div class="button"><p>Second link</p></div>
+			<div class="button"><p>Third link</p></div>
+		</nav>
+		<div class="border"></div>
+	</header>
+	<main id="main">
+		<article class="article">
+			<header>
+				<h2 class="title font-forte">Photoshoot effect</h2>
+				<div class="border"></div>
+			</header>
+			<main>
+				<div class="left">
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+				</div>
+				<div class="right">
+					<div class="image">
+						<img src="https://tutorialzine.com/media/2010/02/641.jpg" alt="Photoshoot effect">
+					</div> 
+				</div>
+			</main>
+		</article>
+		<article class="article">
+			<header>
+				<h2 class="title font-forte">Photoshoot effect</h2>
+				<div class="border"></div>
+			</header>
+			<main>
+				<div class="left">
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+				</div>
+				<div class="right">
+					<div class="image">
+						<img src="https://tutorialzine.com/media/2010/02/641.jpg" alt="Photoshoot effect">
+					</div> 
+				</div>
+			</main>
+		</article>
+		<article class="article">
+			<header>
+				<h2 class="title font-forte">Photoshoot effect</h2>
+				<div class="border"></div>
+			</header>
+			<main>
+				<div class="left">
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+				</div>
+				<div class="right">
+					<div class="image">
+						<img src="https://tutorialzine.com/media/2010/02/641.jpg" alt="Photoshoot effect">
+					</div> 
+				</div>
+			</main>
+		</article>
+		<article class="article">
+			<header>
+				<h2 class="title font-forte">Photoshoot effect</h2>
+				<div class="border"></div>
+			</header>
+			<main>
+				<div class="left">
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+				</div>
+				<div class="right">
+					<div class="image">
+						<img src="https://tutorialzine.com/media/2010/02/641.jpg" alt="Photoshoot effect">
+					</div> 
+				</div>
+			</main>
+		</article>
+		<article class="article">
+			<header>
+				<h2 class="title font-forte">Photoshoot effect</h2>
+				<div class="border"></div>
+			</header>
+			<main>
+				<div class="left">
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+				</div>
+				<div class="right">
+					<div class="image">
+						<img src="https://tutorialzine.com/media/2010/02/641.jpg" alt="Photoshoot effect">
+					</div> 
+				</div>
+			</main>
+		</article>
+	</main>
+	<footer>
+		<hr>
+		<div id="footer-text">&copy; Copyright 2018 - MySite.com</div>
+	</footer>
+</div>
+
+<script>	
+	$(document).ready(() => {
+
+		//BUTTON ANIMATIONS
+		var btn = $('.button');
+		btn.on('click', function(evt) {
+			let thisBtn = evt.currentTarget;
+			var duration = 0.3;
+			var delay = 0.08;
+			TweenMax.to(thisBtn, duration, {scaleY: 1.6, ease: Expo.easeOut});
+			TweenMax.to(thisBtn, duration, {scaleX: 1.2, scaleY: 1, ease: Back.easeOut, easeParams: [3], delay: delay});
+			TweenMax.to(thisBtn, duration * 1.25, {scaleX: 1, scaleY: 1, ease: Back.easeOut, easeParams: [6], delay: delay * 3 });
+		});
+
+		//HIDE HEADER ON SCROLL
+		// Hide Header on on scroll down
+		var didScroll;
+		var lastScrollTop = 0;
+		var delta = 5;
+		var navbarHeight = $('#main-header').outerHeight();
+
+		$(window).scroll(function(event){
+			didScroll = true;
+		});
+
+		setInterval(function() {
+			if (didScroll) {
+				hasScrolled();
+				didScroll = false;
+			}
+		}, 250);
+
+		function hasScrolled() {
+			var st = $(this).scrollTop();
+			
+			// Make sure they scroll more than delta
+			if(Math.abs(lastScrollTop - st) <= delta)
+				return;
+			
+			// If they scrolled down and are past the navbar, add class .nav-up.
+			// This is necessary so you never see what is "behind" the navbar.
+			if (st > lastScrollTop && st > navbarHeight){
+				// Scroll Down
+				$('header').removeClass('nav-down').addClass('nav-up');
+			} else {
+				// Scroll Up
+				if(st + $(window).height() < $(document).height()) {
+					$('header').removeClass('nav-up').addClass('nav-down');
+				}
+			}
+			
+			lastScrollTop = st;
+		}
+	});
+
+	</script>
+</body>
+</html>
