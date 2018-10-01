@@ -1,0 +1,10 @@
+:host {
+	height: 7px;
+    width: 100%;
+	background-color: #ddd;
+	position: absolute;
+	line-height: 7px;
+	text-align: center;
+	padding: 10px;
+	color: #999;
+}
