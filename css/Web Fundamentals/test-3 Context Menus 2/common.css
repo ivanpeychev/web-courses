@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+html {
+	margin: 0;
+	padding: 0;
+	font-family: Open sans, sans-serif;
+	font-size: 10px;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: darkgray;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+}
+
+a:visited {
+	color: white;
+}
+
+ul {
+	list-style: none;
+	padding: 0 0;
+}
